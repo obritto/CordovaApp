@@ -1,0 +1,51 @@
+﻿<h1>
+    {{msg}}
+</h1>
+
+<div>
+    <form>
+        <div class="mdl-textfield mdl-js-textfield textfield-demo">
+            <input ng-model="descricao" class="mdl-textfield__input" type="text" id="txt1" />
+            <label class="mdl-textfield__label" for="txt1">Descrição</label>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield textfield-demo">
+            <input ng-model="quantidade" class="mdl-textfield__input" type="text" id="txt2" />
+            <label class="mdl-textfield__label" for="txt2">Quantidade</label>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield textfield-demo">
+            <input ng-model="valor" class="mdl-textfield__input" type="text" id="txt3" />
+            <label class="mdl-textfield__label" for="txt3">Text...</label>
+        </div>
+
+        <button ng-click="add()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Adicionar
+        </button>
+        </form>
+</div>
+
+
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Descrição</th>
+            <th>Quant</th>
+            <th>Valor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="it in lista">
+            <th>
+                <button ng-click="remove($index)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Remover
+                </button>
+            </th>
+            <td>{{it.descricao}}</td> 
+            <td>{{it.quant}}</td>
+            <td>{{it.valor}}</td>
+        </tr>
+       
+    </tbody>
+</table>
